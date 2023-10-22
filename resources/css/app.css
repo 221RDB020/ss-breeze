@@ -1,0 +1,19 @@
+@import "clash-display.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+.formatted-number::before {
+    content: attr(data-number);
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.formatted-number::after {
+    content: " ";
+    visibility: hidden; /* Hide the space itself */
+}
