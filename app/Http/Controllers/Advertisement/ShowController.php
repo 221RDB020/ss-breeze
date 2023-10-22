@@ -13,6 +13,7 @@ class ShowController extends BaseController
     {
         $_category = Category::where('url',$category)->first();
         $_subcategory = Category::where('url',$subcategory)->first();
+        $_subcategory->hasChildren = count($_subcategory->children) > 0;
         $_subcategory2 = Category::where('url',$subcategory2)->first();
 
         $advertisement = Advertisement::findOrFail($ad);

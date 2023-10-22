@@ -5,43 +5,8 @@ import MainLayout from '@/Layouts/MainLayout';
 import { SiAudi } from 'solid-icons/si'
 import EuroIcon from "@mui/icons-material/Euro";
 import FullscreenRoundedIcon from '@mui/icons-material/FullscreenRounded';
-import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded';
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TabList from "@/Components/TabList";
-
-type Category = {
-    id: number;
-    name: string;
-    url: string;
-    categoryHead: string;
-    hasChildren: boolean;
-    advertisementCount: number;
-};
-
-type Advertisement = {
-    id: number;
-    ad_text: string;
-    model: string;
-    car_manufacturing_year: number;
-    engine_capacity: number;
-    car_mileage: number;
-    price: number;
-    brand: string;
-    engine_type: number;
-    car_gearbox: number;
-    car_body_type: number;
-    gear_count: number;
-    technical_inspection: string;
-    colour: string;
-    vin: string;
-    number_plate: string;
-    phone: string;
-    location: string;
-    created_at: string;
-    views: number;
-    vehicle_options: Array<unknown>;
-};
+import {Advertisement, Category} from "@/types/app";
 
 type PageProps = {
     category: Category;
@@ -142,7 +107,7 @@ export default function Show({category, subcategory, subcategory2, ad}: PageProp
     return (
         <>
             <MainLayout>
-                <Head title={(subcategory2 ? subcategory2.name : subcategory.name) + " " + ad.model.toUpperCase()} />
+                <Head title={(subcategory2 ? subcategory2.name : subcategory.name) + " " + ad.model.toUpperCase().replace('-',' ')} />
                 <section className="flex flex-col min-h-[80dvh] lg:px-24 sm:px-10 px-5 border-b-[3px] border-black">
                     <Router category={category} subcategory={subcategory} subcategory2={subcategory2} />
                     <div className="flex flex-col-reverse lg:flex-row mt-12 mx-6 justify-between">
@@ -151,7 +116,7 @@ export default function Show({category, subcategory, subcategory2, ad}: PageProp
                             <div className="flex relative justify-between items-center h-20 px-9 pt-5">
                                 <div>
                                     <h4 className="text-black leading-6 text-clamp-3xl font-clash-med">{ad.brand}</h4>
-                                    <p className="text-text leading-5 text-clamp-2xl font-clash-med normal-case">{ad.model}</p>
+                                    <p className="text-text leading-5 text-clamp-2xl font-clash-med normal-case">{ad.model.toUpperCase().replace('-',' ')}</p>
                                 </div>
                                 {/*<SiAudi className={`w-1/3 absolute right-9`} />*/}
                             </div>

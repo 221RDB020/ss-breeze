@@ -1,25 +1,7 @@
 import EuroIcon from "@mui/icons-material/Euro";
 import {Pagination} from "@mui/material";
 import React, {useEffect, useState} from "react";
-
-type Category = {
-    id: number;
-    name: string;
-    url: string;
-    categoryHead: string;
-    hasChildren: boolean;
-    advertisementCount: number;
-};
-
-type Advertisement = {
-    id: number;
-    ad_text: string;
-    model: string;
-    car_manufacturing_year: number;
-    engine_capacity: number;
-    car_mileage: number;
-    price: number;
-};
+import {Advertisement, Category} from "@/types/app";
 
 type TableProps = {
     category: Category;

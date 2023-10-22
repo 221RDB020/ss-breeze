@@ -1,27 +1,6 @@
-import React, { useState, useEffect } from "react";
-import route from "ziggy-js";
 import Router from "@/Components/Router";
 import AdsTable from "@/Components/AdsTable";
-import {router} from "@inertiajs/react";
-
-type Category = {
-    id: number;
-    name: string;
-    url: string;
-    categoryHead: string;
-    hasChildren: boolean;
-    advertisementCount: number;
-};
-
-type Advertisement = {
-    id: number;
-    ad_text: string;
-    model: string;
-    car_manufacturing_year: number;
-    engine_capacity: number;
-    car_mileage: number;
-    price: number;
-};
+import {Advertisement, Category} from "@/types/app";
 
 type PageProps = {
     category: Category;
