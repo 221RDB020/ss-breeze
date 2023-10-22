@@ -1,0 +1,48 @@
+[role="tablist"] {
+    display: flex;
+    align-self: center;
+    width: fit-content;
+    position: relative;
+    margin-block: 2rem;
+    border-bottom: 1px solid rgba(0,0,0, .3);
+}
+
+[role="tablist"]::after {
+    content: "";
+    position: absolute;
+    background: black;
+    height: 3px;
+    translate: var(--_left, 0) 0;
+    scale: var(--_width, 0.265) 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: translate 200ms ease-in-out, scale 200ms ease-in-out;
+    transform-origin: left;
+}
+
+[role="tab"] {
+    color: black;
+    padding: 0.575em 1.275em;
+    border: 0;
+    font: inherit;
+    text-transform: uppercase;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+[role="tab"]:hover {
+    opacity: 1;
+}
+
+[role="tab"][aria-selected="true"] {
+    opacity: 1;
+}
+
+#tabPanel-2 {
+    width: 100%;
+    gap: 2rem;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: dense;
+}

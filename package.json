@@ -31,6 +31,7 @@
         "@mui/material": "^5.14.14",
         "react-paginate": "^8.2.0",
         "react-router-dom": "^6.17.0",
+        "solid-icons": "^1.0.12",
         "ziggy-js": "^1.8.1"
     }
 }

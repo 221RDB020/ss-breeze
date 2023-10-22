@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Advertisement;
 use App\Http\Controllers\Category\BaseController;
 use App\Models\Advertisement;
 use App\Models\Category;
+use Inertia\Inertia;
 
 class ShowController extends BaseController
 {
@@ -16,14 +17,11 @@ class ShowController extends BaseController
 
         $advertisement = Advertisement::findOrFail($ad);
 
-        return view(
-            'advertisement.show',
-            compact(
-                '_category',
-                '_subcategory',
-                '_subcategory2',
-                'advertisement',
-            )
-        );
+        return Inertia::render('Advertisement/Show', [
+            'category' => $_category,
+            'subcategory' => $_subcategory,
+            'subcategory2' => $_subcategory2,
+            'ad' => $advertisement,
+        ]);
     }
 }

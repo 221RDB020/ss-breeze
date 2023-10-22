@@ -26,15 +26,14 @@ type PageProps = {
     subcategory: Category;
     subcategory2?: Category|null;
     advertisements: Advertisement[];
-    models: Array<string>;
 };
 
-export default function Index({category, subcategory, subcategory2, advertisements, models}: PageProps) {
+export default function Index({category, subcategory, subcategory2, advertisements}: PageProps) {
     return (
         <>
             <MainLayout>
                 <Head title={subcategory2 ? subcategory2.name : subcategory.name} />
-                <AdvertisementsListSection category={category} subcategory={subcategory} subcategory2={subcategory2} advertisements={advertisements} models={models} />
+                <AdvertisementsListSection category={category} subcategory={subcategory} subcategory2={subcategory2} advertisements={advertisements} />
             </MainLayout>
         </>
     );

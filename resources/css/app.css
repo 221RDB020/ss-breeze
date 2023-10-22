@@ -1,4 +1,5 @@
 @import "clash-display.css";
+@import "tablist.css";
 
 @tailwind base;
 @tailwind components;
